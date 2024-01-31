@@ -1,0 +1,18 @@
+table{
+    color: yellow;
+    border: 1px solid;
+    background: red;
+    margin: auto;
+    font-size: 20px;
+}
+tr thead{
+    border: 2px solid white;
+}
+thead td{
+    color:white;
+    background: yellow;
+    font-size: 25px;
+}
+tr:nth-of-type(even){
+    background: blue;
+}

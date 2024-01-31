@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/xyz.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyderbad Jobs</title>
+</head>
+<body>
+    <div>
+    <h1>Hyderbad Jobs Information</h1>
+    <img src="{% static 'images/hyd1.jpg' %}" alt="">
+    <img src="{% static 'images/hyd2.jpg' %}" alt="">
+    <img src="{% static 'images/hyd3.jpg' %}" alt="">
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <hr>
+    {% if list %}
+    <table>
+        <thead>
+            <th>Date</th>
+            <th>Company</th>
+            <th>Title</th>
+            <th>Eligibility</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+        </thead>
+        {% for jobs in list %}
+        <tr>
+            <td>{{jobs.date}}</td>
+            <td>{{jobs.company}}</td>
+            <td>{{jobs.title}}</td>
+            <td>{{jobs.eligibility}}</td>
+            <td>{{jobs.address}}</td>
+            <td>{{jobs.email}}</td>
+            <td>{{jobs.phone_number}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p id="specialp">No Jobs Found</p>
+    {% endif %}
+</body> 
+</html>
